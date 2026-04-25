@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import SearchBar from './components/SearchBar';
 import CurrentWeather from './components/CurrentWeather';
 import Forecast from './components/Forecast';
@@ -464,6 +465,7 @@ export default function App() {
           </a>
         </footer>
       </div>
+      <Analytics />
     </div>
   );
 }
