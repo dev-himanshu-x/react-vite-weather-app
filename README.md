@@ -1,7 +1,7 @@
-# SkyPulse
+# Neo Cast
 
-SkyPulse is a neo-brutalist weather dashboard for Indian cities, built with React and Vite.
-It provides current conditions, forecast intelligence, air quality, alerting, and planning tools in a fast and responsive UI.
+Neo Cast is a neo-brutalist weather dashboard for Indian cities, built with React and Vite.
+It provides current conditions and forecast intelligence in a fast and responsive UI.
 
 ## Highlights
 

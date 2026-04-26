@@ -348,9 +348,9 @@ export default function App() {
         <header className="rounded-2xl border-4 border-black bg-[#fff8e6] p-4 shadow-[8px_8px_0_#111111] md:p-5">
           <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
             <div className="flex items-center gap-3">
-              <img src={logo} alt="Weather App logo" className="h-12 w-12 shrink-0 sm:h-14 sm:w-14" />
+              <img src={logo} alt="Neo Cast logo" className="h-12 w-12 shrink-0 sm:h-14 sm:w-14" />
               <div>
-                <h1 className="text-2xl font-black leading-tight text-black sm:text-3xl" style={{ fontFamily: 'Outfit, Inter, sans-serif' }}>Weather App</h1>
+                <h1 className="text-2xl font-black leading-tight text-black sm:text-3xl" style={{ fontFamily: 'Outfit, Inter, sans-serif' }}>Neo Cast</h1>
                 <p className="text-sm font-semibold text-black/80 sm:text-base">Advanced live weather intelligence for Indian cities</p>
               </div>
             </div>

@@ -29,6 +29,12 @@ export default function SearchBar({
     inputRef.current?.focus();
   };
 
+  const handleUseMyLocation = () => {
+    if (isLoading) return;
+    setQuery('');
+    onUseLocation();
+  };
+
   return (
     <section className="rounded-2xl border-4 border-black bg-white p-4 shadow-[8px_8px_0_#111111]">
       <div className="mb-3 flex flex-wrap items-center justify-between gap-2">
@@ -58,7 +64,7 @@ export default function SearchBar({
         </button>
         <button
           type="button"
-          onClick={onUseLocation}
+          onClick={handleUseMyLocation}
           disabled={isLoading}
           className="inline-flex items-center justify-center rounded-xl border-3 border-black bg-[#fff7cc] px-4 py-2 text-sm font-extrabold text-black shadow-[3px_3px_0_#111111] transition hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-none disabled:cursor-not-allowed disabled:opacity-60"
         >

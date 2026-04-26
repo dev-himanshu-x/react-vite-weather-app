@@ -10,10 +10,15 @@ function getTempScore(temp, unitSymbol) {
 }
 
 function getOutdoorScore(slot, unitSymbol) {
-  const tempScore = getTempScore(slot.temperature, unitSymbol);
-  const rainScore = Math.max(0, 35 - slot.rainProbability * 0.5);
-  const windScore = Math.max(0, 15 - slot.wind * 0.4);
-  const humidityScore = Math.max(0, 10 - Math.max(0, slot.humidity - 70) * 0.25);
+  const temperature = Number.isFinite(slot.temperature) ? slot.temperature : 0;
+  const precipitationProbability = Number.isFinite(slot.precipitationProbability) ? slot.precipitationProbability : 0;
+  const wind = Number.isFinite(slot.wind) ? slot.wind : 0;
+  const humidity = Number.isFinite(slot.humidity) ? slot.humidity : 0;
+
+  const tempScore = getTempScore(temperature, unitSymbol);
+  const rainScore = Math.max(0, 35 - precipitationProbability * 0.5);
+  const windScore = Math.max(0, 15 - wind * 0.4);
+  const humidityScore = Math.max(0, 10 - Math.max(0, humidity - 70) * 0.25);
   return Math.round(tempScore + rainScore + windScore + humidityScore);
 }
 
@@ -50,7 +55,7 @@ export default function ActivityPlanner({ weather, city, unitSymbol }) {
             </div>
             <p className="mt-1 text-xl font-black text-black">{slot.score}/100</p>
             <p className="mt-1 text-xs font-semibold text-black/80">
-              Temp {Math.round(slot.temperature)}{unitSymbol} | Rain {Math.round(slot.rainProbability)}% | Wind {Math.round(slot.wind)} km/h
+              Temp {Math.round(slot.temperature)}{unitSymbol} | Rain {Math.round(slot.precipitationProbability ?? 0)}% | Wind {Math.round(slot.wind)} km/h
             </p>
           </article>
         ))}
